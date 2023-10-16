@@ -48,7 +48,9 @@ const ChatMessage = ({
       );
 
       if (nextMessage.is_bot) {
-        setRecentChatsId([...RecentChatsId, nextMessage.id]);
+        if (!RecentChatsId.find((id) => id === nextMessage.id)) {
+          setRecentChatsId([...RecentChatsId, nextMessage.id]);
+        }
       } else {
         setPossibleReplyIds(message.next_id);
       }
