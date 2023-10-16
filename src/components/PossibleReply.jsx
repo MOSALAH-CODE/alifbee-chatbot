@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import speaker from "../images/speaker.svg";
+import Speaker from "./Speaker";
 
 const PossibleReply = ({
   possibleReply,
@@ -10,6 +11,9 @@ const PossibleReply = ({
   setEndLesson,
 }) => {
   const [showBotMessage, setShowBotMessage] = useState(false);
+  const [speakerAnimEnd, setSpeakerAnimEnd] = useState(true);
+
+  const audio = new Audio(possibleReply.sound);
 
   const handleReplyClick = () => {
     setRecentChatsId([...RecentChatsId, possibleReply.id]);
@@ -31,19 +35,39 @@ const PossibleReply = ({
     }
   }, [showBotMessage]);
 
+  audio.onended = function () {
+    setSpeakerAnimEnd(true);
+  };
   return (
     <div className="d-flex align-items-center gap-4">
-      <button
-        className="bg-primary p-2 rounded-circle border border-3 border-white box-shadow"
-        onClick={() => {
-          new Audio(possibleReply.sound).play();
-        }}
-        style={{ height: "48px", width: "48px" }}
-      >
-        <img src={speaker} alt="speaker" />
-      </button>
+      <div>
+        {speakerAnimEnd ? (
+          <div
+            className="d-flex align-items-center justify-content-center"
+            style={{ height: "55px", width: "55px" }}
+          >
+            <button
+              className="bg-primary p-2 rounded-circle border border-3 border-white box-shadow"
+              onClick={() => {
+                setSpeakerAnimEnd(false);
+                audio.play();
+              }}
+              style={{ height: "48px", width: "48px" }}
+            >
+              <img src={speaker} alt="speaker" />
+            </button>
+          </div>
+        ) : (
+          <div className="d-flex align-items-center justify-content-center">
+            <Speaker height={55} width={55} />
+          </div>
+        )}
+      </div>
+
       <div
-        className="py-2 px-3 box-shadow w-100 rounded rounded-3"
+        className={`py-2 px-3 w-100 rounded rounded-3 ${
+          speakerAnimEnd ? "box-shadow" : "box-shadow-primary"
+        }`}
         onClick={handleReplyClick}
         style={{ cursor: "pointer" }}
       >

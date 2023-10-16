@@ -61,7 +61,7 @@ const ChatPage = () => {
                 setCloseModalShow={setCloseModalShow}
               />
               <div
-                className="container-fluid d-grid align-content-between"
+                className="container-fluid d-grid align-content-between overflow-hidden p-0"
                 style={{ height: "100vh" }}
               >
                 <div className="row conversation overflow-y-auto">
@@ -76,7 +76,7 @@ const ChatPage = () => {
                     setScroll={setScroll}
                   />
                 </div>
-                <div className={"row-col-auto"}>
+                <div className="row-col-auto">
                   <PossibleReplies
                     chat={chat}
                     possibleReplyIds={possibleReplyIds}

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import bee from "../images/bee.svg";
 import profile from "../images/profile.svg";
 import speaker from "../images/speaker.svg";
+import Speaker from "./Speaker";
 
 import data from "../json/bot.json";
 
@@ -15,6 +16,7 @@ const ChatMessage = ({
   setScroll,
 }) => {
   const [showLoading, setShowLoading] = useState(true);
+  const [speakerAnimEnd, setSpeakerAnimEnd] = useState(false);
 
   const audio = new Audio(message.sound);
 
@@ -31,6 +33,8 @@ const ChatMessage = ({
       setTimeout(() => {
         audio.play();
       }, 1000);
+    } else {
+      setSpeakerAnimEnd(true);
     }
 
     // Clear the timer when the component unmounts or when showLoading is set to false
@@ -50,6 +54,7 @@ const ChatMessage = ({
       }
     }
     setAudioEnd(true);
+    setSpeakerAnimEnd(true);
   };
 
   return (
@@ -65,20 +70,33 @@ const ChatMessage = ({
         >
           <img src={message.is_bot ? bee : profile} />
         </div>
-        <button
-          className={`position-absolute align-items-center bg-primary border border-2 border-white box-shadow d-flex justify-content-center p-2 rounded-circle ${
-            message.is_bot ? "small-speaker" : "small-speaker-reverse"
-          }`}
-          onClick={() => {
-            new Audio(message.sound).play();
-          }}
-        >
-          <img
-            src={speaker}
-            alt="speaker"
-            style={{ height: "13.5px", width: "13.5px" }}
-          />
-        </button>
+        {speakerAnimEnd ? (
+          <button
+            className={`position-absolute align-items-center bg-primary border border-2 border-white box-shadow d-flex justify-content-center p-2 rounded-circle ${
+              message.is_bot ? "small-speaker" : "small-speaker-reverse"
+            }`}
+            onClick={() => {
+              setSpeakerAnimEnd(false);
+              audio.play();
+            }}
+          >
+            <img
+              src={speaker}
+              alt="speaker"
+              style={{ height: "13.5px", width: "13.5px" }}
+            />
+          </button>
+        ) : (
+          <div
+            className={`position-absolute d-flex align-content-center justify-content-center  ${
+              message.is_bot
+                ? "small-speaker-anim"
+                : "small-speaker-reverse-anim"
+            }`}
+          >
+            <Speaker height={32} width={32} />
+          </div>
+        )}
       </div>
       <div className="d-flex position-relative">
         <div
