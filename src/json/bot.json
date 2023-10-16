@@ -1,0 +1,164 @@
+{
+  "chat": [
+    {
+      "id": 1,
+      "text": "مَرحَبًا",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/7c582c133f20fb9e4abb28bf81717a8d.mp3",
+      "is_bot": true,
+      "next_id": [2, 3, 4],
+      "translate": "Hello"
+    },
+    {
+      "id": 2,
+      "text": "أَهلًا وَسَهلًا",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/27a47e2e96608bdd57f5fa51db9f1d20.mp3",
+      "is_bot": false,
+      "next_id": [5],
+      "translate": "Hi"
+    },
+    {
+      "id": 3,
+      "text": "أَهلًا بِك",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/3763b590404501b24ea67f3884f0d806.mp3",
+      "is_bot": false,
+      "next_id": [5],
+      "translate": "Hi there"
+    },
+    {
+      "id": 4,
+      "text": "مَرحَبًا",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/47e24114629f0e947be6d2e7bae8a233.mp3",
+      "is_bot": false,
+      "next_id": [5],
+      "translate": "Hello"
+    },
+    {
+      "id": 5,
+      "text": "كَيفَ حالُك؟",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/7daceb9e0ef16718f75080d3f42bdc63.mp3",
+      "is_bot": true,
+      "next_id": [6, 7, 8],
+      "translate": "How are you?"
+    },
+    {
+      "id": 6,
+      "text": "الحَمدُ لِلَّه، وأَنتَ؟",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/f2591aa73b7c076a590748cb614e81c2.mp3",
+      "is_bot": false,
+      "next_id": [9],
+      "translate": "I am okay, and you?"
+    },
+    {
+      "id": 7,
+      "text": "أنا بِخَير، كَيفَ حالكَ أنتَ؟",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/5bf09b5b103137f35180cd0da785c31a.mp3",
+      "is_bot": false,
+      "next_id": [10],
+      "translate": "I am good, how are you?"
+    },
+    {
+      "id": 8,
+      "text": "أنا مُتعَبٌ قَليلًا",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/9e9dbf7db02f20bba90bc392e6a715bc.mp3",
+      "is_bot": false,
+      "next_id": [11],
+      "translate": "I am a bit tired"
+    },
+    {
+      "id": 9,
+      "text": "الحَمدُ لِلَّه، ما لُغَتُك؟",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/47994d358b7dd460a47aa9409826229e.mp3",
+      "is_bot": true,
+      "next_id": [12, 13, 14, 15, 16],
+      "translate": "Thank God. What is you language?"
+    },
+    {
+      "id": 10,
+      "text": "وأنا بِخَير، ما لُغَتُك؟",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/0d1eee566d9ac6c9a5f6d7307fea79a2.mp3",
+      "is_bot": true,
+      "next_id": [12, 13, 14, 15, 16],
+      "translate": "I am fine. What is your language?"
+    },
+    {
+      "id": 11,
+      "text": "عافاك الله، ما لُغَتُك؟",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/03e552d0d05a95b7e28d120a7d7719a2.mp3",
+      "is_bot": true,
+      "next_id": [12, 13, 14, 15, 16],
+      "translate": "God bless you. What is your language?"
+    },
+    {
+      "id": 12,
+      "text": "لُغَتي العَرَبيّة",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/223650c09e7afd847ab17da7f873efe5.mp3",
+      "is_bot": false,
+      "next_id": [17],
+      "translate": "My language is Arabic"
+    },
+    {
+      "id": 13,
+      "text": "لُغَتي الإنجليزيّة",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/482ae308f23a76d7f2277be524fd36c0.mp3",
+      "is_bot": false,
+      "next_id": [17],
+      "translate": "My language is English"
+    },
+    {
+      "id": 14,
+      "text": "لُغَتي التُّركِيّة",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/311ccb021742fd28f11c6e7f183dc7b1.mp3",
+      "is_bot": false,
+      "next_id": [17],
+      "translate": "My language is Turkish"
+    },
+    {
+      "id": 15,
+      "text": "لُغَتي الفَرَنسِيّة",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/d55d4e95f722cd2b3f28f33e23320a92.mp3",
+      "is_bot": false,
+      "next_id": [17],
+      "translate": "My language is French"
+    },
+    {
+      "id": 16,
+      "text": "لُغَتي  الأُردِيّة",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/f148897f339c74f823d439d047ce1b56.mp3",
+      "is_bot": false,
+      "next_id": [17],
+      "translate": "My language is Urdu"
+    },
+    {
+      "id": 17,
+      "text": "جَميل، وأنا أَتَكلَّمُ العَرَبِيَّة",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/cbb3c06fa3bcc978561845e337a7856b.mp3",
+      "is_bot": true,
+      "next_id": [20],
+      "translate": "Lovely, I speak Arabic"
+    },
+    {
+      "id": 18,
+      "text": "إلى اللِّقاء",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/1e7fee501eecf1614b439903e0d0229b.mp3",
+      "is_bot": false,
+      "next_id": [],
+      "translate": "See you soon"
+    },
+    {
+      "id": 19,
+      "text": "مَع السَّلامة",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/91eb733a98bf39f377766a99df41d2dd.mp3",
+      "is_bot": false,
+      "next_id": [],
+      "translate": "Goodbye"
+    },
+    {
+      "id": 20,
+      "text": "وَداعًا",
+      "sound": "https://s3.eu-central-1.amazonaws.com/arabee/assets/sounds/09bf981eeac43757be8934eec40035dd.mp3",
+      "is_bot": true,
+      "next_id": [18, 19],
+      "translate": "Farewell"
+    }
+  ]
+}

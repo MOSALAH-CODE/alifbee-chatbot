@@ -1,0 +1,310 @@
+$primary: #fecd34;
+$secondary: #4c3451;
+$light: #f9f9f9;
+
+// Custom colors
+$primary-alt: #fff9e7;
+$primary-second: #fff0c2;
+$primary-darker: rgba(252, 174, 57, 1);
+$light-alt: #f1f2f5;
+$secondary-alt: #68556c;
+
+$light-green: #eff8f0;
+$sky-blue: #87c3e4;
+
+@import "../../node_modules/bootstrap/scss/functions";
+@import "../../node_modules/bootstrap/scss/variables";
+
+$custom-colors: (
+  "primary-alt": $primary-alt,
+  "primary-second": $primary-second,
+  "primary-darker": $primary-darker,
+  "light-alt": $light-alt,
+  "secondary-alt": $secondary-alt,
+  "light-green": $light-green,
+  "sky-blue": $sky-blue,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+// import bootstrap
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+@import url("https://fonts.cdnfonts.com/css/sf-pro-display");
+
+:root {
+  --bs-body-font-family: "Roboto", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  font-size: 1rem;
+}
+
+@font-face {
+  font-family: "SakkalRegular";
+  src: local("SakkalRegular"),
+    url("../fonts/SakkalMajalla/SakkalRegular.ttf") format("truetype");
+}
+
+.font-face-sakkal {
+  font-family: "SakkalRegular";
+  font-size: 18px;
+}
+
+p {
+  margin-bottom: 0;
+}
+
+.bg-hover-light-alt:hover {
+  background-color: $light-alt !important;
+}
+
+.spacer {
+  margin-top: 100px;
+}
+
+.btn:focus,
+.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.box-shadow {
+  -webkit-box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.08);
+  -moz-box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.08);
+  box-shadow: 0px 0px 60px 0px rgba(0, 0, 0, 0.08);
+}
+/* SWITCH */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 48px; /* Updated width to 48px */
+  height: 28px; /* Updated height to 28px */
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 24px;
+  width: 24px;
+  left: 3px;
+  bottom: 2px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: $secondary;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(18px);
+  -ms-transform: translateX(18px);
+  transform: translateX(18px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 28px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+// chat box
+.chat-box {
+  border-radius: 0px 10px 10px 10px;
+}
+
+.chat-box-reverse {
+  border-radius: 10px 0px 10px 10px;
+}
+
+.polygon {
+  transform: rotate(180deg);
+  left: -15px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0px 10px;
+  border-color: transparent transparent transparent $secondary;
+}
+
+.polygon-reverse {
+  transform: rotate(90deg);
+  right: -14px;
+  top: 5px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 0px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+.small-speaker {
+  height: 24px;
+  width: 24px;
+  top: 28px;
+  left: -5px;
+}
+.small-speaker-reverse {
+  height: 24px;
+  width: 24px;
+  top: 28px;
+  right: -5px;
+}
+.lds-ellipsis {
+  display: inline-block;
+  position: relative;
+  width: 52px;
+  height: 13px;
+  margin: 10px;
+}
+
+.lds-ellipsis div {
+  position: absolute;
+  top: 0;
+  width: 13px;
+  height: 13px;
+  border-radius: 50%;
+  background: #cccccc;
+  animation-timing-function: cubic-bezier(0, 1, 1, 0);
+}
+
+.lds-ellipsis div:nth-child(1) {
+  left: 0;
+  animation: lds-ellipsis1 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(2) {
+  left: 0;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(3) {
+  left: 13px;
+  animation: lds-ellipsis2 0.6s infinite;
+}
+
+.lds-ellipsis div:nth-child(4) {
+  left: 26px;
+  animation: lds-ellipsis3 0.6s infinite;
+}
+
+@keyframes lds-ellipsis1 {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes lds-ellipsis3 {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0);
+  }
+}
+
+@keyframes lds-ellipsis2 {
+  0% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(13px, 0);
+  }
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.conversation::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+.conversation {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+.get-possible-replies {
+  animation: left-to-right 1s forwards ease-in;
+}
+
+.out-possible-replies {
+  animation: right-to-left 1s forwards ease-in;
+}
+
+@keyframes left-to-right {
+  0% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes right-to-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-200%);
+  }
+}
+
+// loading animation
+.loader-container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  background: $secondary;
+  z-index: 1;
+}
+
+.spinner {
+  width: 64px;
+  height: 64px;
+  border: 8px solid;
+  border-color: $primary transparent $primary transparent;
+  border-radius: 50%;
+  animation: spin-anim 1.2s linear infinite;
+}
+
+@keyframes spin-anim {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
