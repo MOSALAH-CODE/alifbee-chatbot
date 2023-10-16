@@ -71,7 +71,11 @@ const PossibleReply = ({
         onClick={handleReplyClick}
         style={{ cursor: "pointer" }}
       >
-        <p className={"text-end font-face-sakkal text-secondary"}>
+        <p
+          className={`text-end font-face-sakkal text-secondary  ${
+            speakerAnimEnd ? "" : "scale-text"
+          }`}
+        >
           {possibleReply.text}
         </p>
         {translate === 0 && (

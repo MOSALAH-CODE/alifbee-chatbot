@@ -326,3 +326,19 @@ input:checked + .slider:before {
     transform: rotate(360deg);
   }
 }
+
+.scale-text {
+  animation: scale-text 1s;
+}
+
+@keyframes scale-text {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(-10px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

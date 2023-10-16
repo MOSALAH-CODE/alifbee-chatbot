@@ -126,7 +126,7 @@ const ChatMessage = ({
               <p
                 className={`text-end font-face-sakkal ${
                   message.is_bot ? "text-white" : "text-secondary"
-                }`}
+                } ${speakerAnimEnd ? "" : "scale-text"}`}
               >
                 {message.text}
               </p>
