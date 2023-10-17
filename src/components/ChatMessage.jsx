@@ -30,13 +30,19 @@ const ChatMessage = ({
     if (message.is_bot) {
       setAudioEnd(false);
 
-      setTimeout(() => {
-        audio.play();
-      }, 1000);
+      audio.onloadedmetadata = function () {
+        setTimeout(() => {
+          console.log("sound played");
+          audio.play();
+        }, 1000);
+      };
+
+      audio.onerror = function (error) {
+        console.log("error play sound:", error);
+      };
     } else {
       setSpeakerAnimEnd(true);
     }
-
     // Clear the timer when the component unmounts or when showLoading is set to false
     return () => clearTimeout(timer);
   }, [setShowLoading, setAudioEnd, message.is_bot]);
