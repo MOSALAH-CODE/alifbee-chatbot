@@ -19,6 +19,7 @@ const ChatMessage = ({
   const [speakerAnimEnd, setSpeakerAnimEnd] = useState(false);
 
   const audio = new Audio(message.sound);
+  const speakerSound = new Audio(message.sound);
 
   useEffect(() => {
     setScroll(true);
@@ -65,6 +66,10 @@ const ChatMessage = ({
     setSpeakerAnimEnd(true);
   };
 
+  speakerSound.onended = function () {
+    setSpeakerAnimEnd(true);
+  };
+
   return (
     <div className={`d-flex ${message.is_bot ? "" : "flex-row-reverse"} gap-4`}>
       <div className="position-relative">
@@ -85,7 +90,7 @@ const ChatMessage = ({
             }`}
             onClick={() => {
               setSpeakerAnimEnd(false);
-              audio.play();
+              speakerSound.play();
             }}
           >
             <img
